@@ -5,56 +5,41 @@ const logos = [
   { src: 'https://static.tildacdn.com/tild3634-3038-4265-a133-623335383466/IF_-_logo_-_one_line.svg', alt: 'Intervals Festival' },
 ]
 
-const cases = [
-  {
-    tag: 'Multimedia Foundation · 3 потока',
-    title: 'Студенты создали финальные проекты на реальном оборудовании',
-    desc: 'Каждый поток завершается защитой проектов — мультимедиа-инсталляций, созданных на технической базе dreamlaser.',
-  },
-  {
-    tag: 'Intervals Education · 2025',
-    title: 'Kafedra — куратор образовательной программы Intervals Festival',
-    desc: 'Крупнейший международный фестиваль мультимедиа-искусства в России. Kafedra курирует образовательное направление.',
-  },
-  {
-    tag: 'Партнёрство',
-    title: 'Сотрудничество с ведущими студиями и арт-пространствами',
-    desc: 'Спикеры — действующие специалисты из dreamlaser и партнёрских студий, работающие над международными проектами.',
-  },
-  {
-    tag: 'Планы',
-    title: 'Публичная выставка студенческих работ в ЦЕХ',
-    desc: 'Финальные проекты четвёртого потока будут представлены в мультимедийном пространстве ЦЕХ — открытый показ для индустрии.',
-  },
-]
-
 export default function Proof() {
   return (
     <section className="w-full px-8 md:px-16 py-24 bg-white border-t border-gray-200">
-      <span className="inline-block bg-black text-white text-xs font-bold uppercase tracking-widest px-2 py-1 mb-6">
-        Экосистема и партнёры
-      </span>
-      <h2 className="text-2xl md:text-3xl font-bold text-black leading-snug mb-12 max-w-2xl">
-        Kafedra работает в индустриальной среде, а не в вакууме
+      <h2 className="text-2xl md:text-4xl font-bold text-black leading-tight max-w-4xl mb-16">
+        Kafedra — это образовательная платформа от компании dreamlaser, работающей в индустрии мультимедиа технологий уже 20 лет.
       </h2>
 
-      {/* Logos */}
-      <div className="flex flex-wrap gap-8 items-center mb-12 pb-12 border-b border-gray-200">
-        {logos.map((l) => (
-          <img key={l.alt} src={l.src} alt={l.alt} className="h-5 object-contain opacity-50 hover:opacity-100 transition-opacity" />
-        ))}
+      <div className="grid grid-cols-1 md:grid-cols-[1fr_1fr_1fr] gap-6 mb-16">
+        <div className="row-span-2">
+          <img
+            src="https://static.tildacdn.com/tild3564-6431-4161-b130-323566363464/noroot.png"
+            className="w-full h-full object-cover"
+          />
+        </div>
+        <div className="border-t-2 border-gray-200 pt-4">
+          <h3 className="bg-gray-100 text-black text-xs font-bold uppercase tracking-widest px-3 py-2 inline-block mb-4">
+            Kafedra x dreamlaser
+          </h3>
+          <p className="text-sm text-gray-500 leading-relaxed">
+            В портфолио dreamlaser — тысячи реализованных проектов по всему миру. Специалисты компании накопили огромный опыт, которым готовы поделиться.
+          </p>
+        </div>
+        <div className="border-t-2 border-gray-200 pt-4">
+          <h3 className="bg-gray-100 text-black text-xs font-bold uppercase tracking-widest px-3 py-2 inline-block mb-4">
+            Индустрия
+          </h3>
+          <p className="text-sm text-gray-500 leading-relaxed">
+            Наша школа — не изолированная теория, а живая часть индустрии. Мы сотрудничаем с ведущими студиями, фестивалями и культурными площадками.
+          </p>
+        </div>
       </div>
 
-      {/* Cases */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        {cases.map((c, i) => (
-          <div key={i} className="border border-gray-200 p-8 hover:border-gray-400 transition-colors">
-            <span className="inline-block bg-gray-100 text-gray-500 text-xs font-bold tracking-widest px-2 py-1 mb-4">
-              {c.tag}
-            </span>
-            <h4 className="text-base font-bold text-black mb-2 leading-snug">{c.title}</h4>
-            <p className="text-sm text-gray-500 leading-relaxed">{c.desc}</p>
-          </div>
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-8 items-center pt-12 border-t border-gray-200">
+        {logos.map((l) => (
+          <img key={l.alt} src={l.src} alt={l.alt} className="h-8 md:h-10 object-contain" />
         ))}
       </div>
     </section>
