@@ -36,7 +36,7 @@ export default function FAQ() {
         Частые вопросы
       </h2>
 
-      <div className="max-w-2xl">
+      <div className="max-w-2xl mx-auto">
         {faqs.map((f, i) => (
           <div key={i} className="border-b border-gray-200">
             <button
