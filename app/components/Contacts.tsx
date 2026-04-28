@@ -105,34 +105,6 @@ export default function Contact() {
           )}
         </div>
       </div>
-
-      {/* Contact person */}
-      <div className="px-8 md:px-16 py-16 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-        <div>
-          <span className="inline-block bg-white/10 text-white/60 text-[10px] px-2 py-0.5 mb-6">
-            По вопросам корпоративного обучения
-          </span>
-          <h3 className="text-3xl md:text-4xl font-bold mb-3">Роман Кихтенко</h3>
-          <p className="text-white/60 text-xs mb-6">
-            Партнёр и куратор образовательной платформы Kafedra
-          </p>
-          <div className="space-y-2 mb-8">
-            <p className="text-white text-xs">Tel: +7 910 385 0028</p>
-            <p className="text-white text-xs">Email: info@kafedra.school</p>
-          </div>
-          <div className="flex gap-3">
-            <a href="https://kafedra.school" className="border border-white/30 text-white text-xs px-5 py-2.5 hover:bg-white hover:text-black transition-colors">
-              kafedra.school
-            </a>
-            <a href="https://t.me/kafedra" className="border border-white/30 text-white text-xs px-5 py-2.5 hover:bg-white hover:text-black transition-colors">
-              Telegram
-            </a>
-          </div>
-        </div>
-        <div className="w-full h-full">
-          <img src="/Roman.png" className="w-full h-full object-cover object-top" />
-        </div>
-      </div>
     </section>
   )
 }
