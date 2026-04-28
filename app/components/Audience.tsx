@@ -9,29 +9,31 @@ const audiences = [
 export default function Audience() {
   return (
     <section className="w-full px-8 md:px-16 py-24 bg-white border-t border-gray-200">
-      <div className="mb-16">
-        <h2 className="text-4xl md:text-5xl font-bold text-black leading-tight">
-          Кому подходят<br />программы
-        </h2>
-        <p className="text-xs text-gray-400 mt-3">От корпоративных команд до R&D</p>
-      </div>
+      <div className="grid grid-cols-1 md:grid-cols-[280px_1fr] gap-16">
+        <div>
+          <h2 className="text-4xl md:text-5xl font-bold text-black leading-[1.1]">
+            Кому<br />подходят<br />программы
+          </h2>
+          <p className="text-sm text-gray-400 mt-3">От корпоративных команд до R&D</p>
+        </div>
 
-      <div className="flex flex-col">
-        {audiences.map((a, i) => (
-          <div key={i} className="py-10 border-t border-gray-200">
-            <div className="flex items-stretch gap-0 mb-4">
-              <span className="inline-flex items-center justify-center bg-black text-white text-sm font-bold w-14 h-12">
-                {a.letter}
-              </span>
-              <span className="bg-gray-200 text-black text-base font-bold px-5 flex items-center flex-1">
-                {a.name}
-              </span>
+        <div className="flex flex-col">
+          {audiences.map((a, i) => (
+            <div key={i} className="mb-12">
+              <div className="flex items-stretch gap-0 mb-3">
+                <span className="inline-flex items-center justify-center bg-black text-white text-base font-bold px-6 py-3 min-w-[80px]">
+                  {a.letter}
+                </span>
+                <span className="bg-gray-200 text-black text-xl md:text-2xl font-bold px-6 py-3 flex items-center flex-1">
+                  {a.name}
+                </span>
+              </div>
+              <p className="text-sm text-gray-500 leading-relaxed">
+                {a.desc}
+              </p>
             </div>
-            <p className="text-sm text-gray-500 leading-relaxed max-w-2xl">
-              {a.desc}
-            </p>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </section>
   )
