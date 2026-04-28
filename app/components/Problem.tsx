@@ -1,49 +1,45 @@
-export default function Problem() {
-    const problems = [
-      'Сложно создавать технологически реалистичные концепции',
-      'Возникают ошибки в продакшне из-за непонимания технических ограничений',
-      'Прототипы и визуальные решения долго проходят путь от идеи до реализации',
-      'Трудно ставить корректные задачи подрядчикам и техническим специалистам',
-    ]
-  
-    return (
-      <section className="w-full grid grid-cols-1 md:grid-cols-2 items-stretch">
-        <div className="px-8 md:px-16 py-16 flex flex-col justify-between">
-          <div>
-            <span className="inline-block bg-black text-white text-xs font-bold uppercase tracking-widest px-2 py-1 mb-6">
-              Контекст проблемы
-            </span>
-            <h2 className="text-2xl md:text-3xl font-bold text-black leading-snug mb-6">
-              Введение
-            </h2>
-            <p className="text-sm text-black leading-relaxed mb-3">
-              Современные компании создают продукты, сервисы и мероприятия, где мультимедиа и технологии становятся ключевыми инструментами.
-            </p>
-            <p className="text-sm text-black leading-relaxed mb-8">
-              Но командам часто не хватает практического опыта, который помогал бы работать быстро и эффективно:
-            </p>
-  
-            <ul className="space-y-4 mb-8">
-              {problems.map((p, i) => (
-                <li key={i} className="flex gap-4 items-start">
-                  <span className="inline-flex items-center justify-center bg-black text-white text-xs font-bold w-5 h-5 shrink-0 mt-0.5">
-                    {i + 1}
-                  </span>
-                  <p className="text-sm text-black leading-relaxed">{p}</p>
-                </li>
-              ))}
-            </ul>
-          </div>
-  
-          <p className="text-sm text-black leading-relaxed">
-            Kafedra закрывает этот разрыв через практические программы, которые дают командам реальные навыки и ускоряют рабочие процессы.
-          </p>
-        </div>
-        
-        <div className="px-8 md:px-16 py-16">
-  <div className="w-full h-full min-h-[400px] bg-gray-100" />
-</div>
+const problems = [
+  {
+    num: '01',
+    title: 'Концепции оторваны от технологий',
+    desc: 'Креативные идеи невозможно реализовать — команда не понимает ограничений проекторов, экранов, лазеров и серверов.',
+  },
+  {
+    num: '02',
+    title: 'Ошибки на этапе продакшна',
+    desc: 'Контент готовится без учёта технических требований — пересъёмки, переделки, срыв сроков и перерасход бюджета.',
+  },
+  {
+    num: '03',
+    title: 'Долгий путь от идеи до прототипа',
+    desc: 'Без навыков работы с мультимедиа-инструментами прототипирование занимает недели вместо дней.',
+  },
+  {
+    num: '04',
+    title: 'Не получается поставить задачу подрядчику',
+    desc: 'Без понимания пайплайна ТЗ получаются размытыми, подрядчики делают не то, бюджет уходит на итерации.',
+  },
+]
 
-      </section>
-    )
-  }
+export default function Problem() {
+  return (
+    <section className="w-full px-8 md:px-16 py-24 bg-white">
+      <span className="inline-block bg-black text-white text-xs font-bold uppercase tracking-widest px-2 py-1 mb-6">
+        Проблема
+      </span>
+      <h2 className="text-2xl md:text-3xl font-bold text-black leading-snug mb-12 max-w-2xl">
+        Вашей команде не хватает практических навыков в мультимедиа?
+      </h2>
+
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-gray-200">
+        {problems.map((p) => (
+          <div key={p.num} className="bg-white p-8 md:p-10">
+            <span className="text-5xl font-bold text-gray-100 block mb-4">{p.num}</span>
+            <h3 className="text-base font-bold text-black mb-2">{p.title}</h3>
+            <p className="text-sm text-gray-500 leading-relaxed">{p.desc}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+  )
+}

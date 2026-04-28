@@ -1,104 +1,102 @@
-'use client'
-import { useState } from 'react'
-
 const programs = [
   {
+    label: 'Основная программа',
     title: 'Multimedia Foundation',
-    problem: 'Командам не хватает навыков и понимания того, как устроены и реализуются мультимедиа-проекты.',
-    solution: 'Практическая программа, покрывающая весь путь: идея → концепция → визуал → продакшн → техническая сборка и презентация.',
-    directions: null,
+    featured: true,
+    desc: 'Полный путь мультимедиа-проекта: идея → концепция → визуал → продакшн → техническая сборка и презентация.',
     results: [
-      'Понимание полного мультимедиа-пайплайна — как проект проходит путь от идеи до технической реализации',
-      'Умение проектировать концепцию под реальные технические возможности',
-      'Навык работы с визуальными системами и их ограничениями: экраны, свет, лазеры',
+      'Понимание полного мультимедиа-пайплайна',
+      'Проектирование концепции под реальные технические возможности',
+      'Работа с визуальными системами: экраны, свет, лазеры',
       'Подготовка контента с учётом технических требований',
-      'Умение ставить точные задачи подрядчикам и техническим командам',
+      'Умение ставить точные задачи подрядчикам',
     ],
+    meta: ['Онлайн + офлайн', '~2 месяца', 'Финальный проект'],
   },
   {
-    title: 'Weekend Bootcamps',
-    problem: 'Команды нуждаются в быстром, сфокусированном обучении без отрыва от основной работы.',
-    solution: 'Интенсивные практические программы, основанные на работе с реальным оборудованием.',
-    directions: [
-      { name: 'Multimedia Bootcamp', desc: 'Прототипирование сцены, инсталляции, визуального решения' },
-      { name: 'Technical Bootcamp', desc: 'Практика на оборудовании: свет, лазеры, LED-экраны, управление сетапом' },
-    ],
+    label: 'Интенсив',
+    title: 'Weekend Bootcamp',
+    featured: false,
+    desc: 'Концентрированная офлайн-практика на технической базе dreamlaser в Нижнем Новгороде. 2–4 дня работы с реальным оборудованием.',
     results: [
-      'Готовый прототип решения',
-      'Повышение технической грамотности',
-      'Командная синхронизация и общее видение',
+      'Быстрое погружение в мультимедиа-технологии',
+      'Работа с проекторами, серверами, световым оборудованием',
+      'Понимание технических ограничений на практике',
+      'Командная работа на площадке',
     ],
+    meta: ['Офлайн', '2–4 дня', 'Нижний Новгород'],
+  },
+  {
+    label: 'Индивидуально',
+    title: 'Кастомная программа',
+    featured: false,
+    desc: 'Разработаем программу под конкретный запрос компании. От отдельных мастер-классов до полноценного курса с офлайн-компонентом.',
+    results: [
+      'Программа под ваши задачи и уровень команды',
+      'Гибкий формат: онлайн, офлайн или гибрид',
+      'Итоговый проект на основе реальной задачи компании',
+      'Стоимость формируется после брифинга',
+    ],
+    meta: ['Любой формат', 'По запросу'],
   },
 ]
 
 export default function Programs() {
-  const [active, setActive] = useState(0)
-  const prog = programs[active]
-
   return (
-    <section className="w-full px-8 md:px-16 py-16 bg-white">
-      <h2 className="text-2xl md:text-3xl font-bold text-black mb-10">Программы</h2>
+    <section id="programs" className="w-full px-8 md:px-16 py-24 bg-white border-t border-gray-200">
+      <span className="inline-block bg-black text-white text-xs font-bold uppercase tracking-widest px-2 py-1 mb-6">
+        Программы
+      </span>
+      <h2 className="text-2xl md:text-3xl font-bold text-black leading-snug mb-12 max-w-2xl">
+        Готовые программы и кастомные решения под задачу
+      </h2>
 
-      {/* Табы */}
-      <div className="flex flex-wrap gap-2 mb-10">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         {programs.map((p, i) => (
-          <button
+          <div
             key={i}
-            onClick={() => setActive(i)}
-            className={`px-4 py-2 text-xs font-bold tracking-widest transition-colors border border-black ${
-              active === i
-                ? 'bg-white text-black'
-                : 'bg-black text-white hover:bg-white hover:text-black'
+            className={`border p-8 flex flex-col ${
+              p.featured ? 'border-black' : 'border-gray-200'
             }`}
           >
-            {p.title}
-          </button>
-        ))}
-      </div>
-
-      {/* Контент */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
-        <div className="flex flex-col gap-6">
-          <div>
-            <span className="inline-block bg-gray-100 text-gray-500 text-xs font-bold tracking-widest px-2 py-1 mb-3">Проблема</span>
-            <p className="text-sm text-black leading-relaxed">{prog.problem}</p>
-          </div>
-
-          <div>
-            <span className="inline-block bg-gray-100 text-gray-500 text-xs font-bold tracking-widest px-2 py-1 mb-3">Решение</span>
-            <p className="text-sm text-gray-500 leading-relaxed">{prog.solution}</p>
-          </div>
-
-          {prog.directions && (
-            <div>
-              <span className="inline-block bg-gray-100 text-gray-500 text-xs font-bold tracking-widest px-2 py-1 mb-3">Направления</span>
-              <div className="space-y-3">
-                {prog.directions.map((d, i) => (
-                  <div key={i}>
-                    <p className="text-sm font-bold text-black">→ {d.name}</p>
-                    <p className="text-sm text-gray-500">{d.desc}</p>
-                  </div>
-                ))}
-              </div>
+            {/* Header */}
+            <div className="flex items-start justify-between mb-4">
+              <span className="inline-block bg-gray-100 text-gray-500 text-xs font-bold tracking-widest px-2 py-1">
+                {p.label}
+              </span>
+              {p.featured && (
+                <span className="inline-block bg-black text-white text-xs font-bold px-2 py-1">
+                  Флагман
+                </span>
+              )}
             </div>
-          )}
 
-          <div>
-            <span className="inline-block bg-gray-100 text-gray-500 text-xs font-bold tracking-widest px-2 py-1 mb-3">Результаты для команды</span>
-            <ul className="space-y-2">
-              {prog.results.map((item, i) => (
-                <li key={i} className="flex gap-3 items-start">
-                  <span className="inline-flex items-center justify-center bg-black text-white text-xs font-bold w-5 h-5 shrink-0 mt-0.5">
-                    {i + 1}
-                  </span>
-                  <p className="text-sm text-black leading-relaxed">{item}</p>
+            <h3 className="text-xl font-bold text-black mb-3">{p.title}</h3>
+            <p className="text-sm text-gray-500 leading-relaxed mb-6">{p.desc}</p>
+
+            {/* Results */}
+            <ul className="space-y-3 mb-8 flex-1">
+              {p.results.map((r, j) => (
+                <li key={j} className="text-sm text-black leading-relaxed flex gap-2 items-start">
+                  <span className="text-gray-300 shrink-0">→</span>
+                  {r}
                 </li>
               ))}
             </ul>
-          </div>
-        </div>
 
-        <div className="w-full aspect-[4/3] bg-gray-100" />
+            {/* Meta tags */}
+            <div className="flex flex-wrap gap-2 pt-6 border-t border-gray-100">
+              {p.meta.map((m, j) => (
+                <span
+                  key={j}
+                  className="text-xs text-gray-400 border border-gray-200 px-3 py-1"
+                >
+                  {m}
+                </span>
+              ))}
+            </div>
+          </div>
+        ))}
       </div>
     </section>
   )
