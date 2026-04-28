@@ -34,10 +34,16 @@ export default function Hero() {
 
         {/* CTA */}
         <div className="flex flex-wrap gap-3 mb-10">
-          <a href="#contact" className="bg-white text-black text-xs font-bold px-6 py-3 hover:bg-gray-200 transition-colors">
+          
+            href="#contact"
+            className="bg-white text-black text-xs font-bold px-6 py-3 hover:bg-gray-200 transition-colors"
+          >
             Оставить заявку
           </a>
-          <a href="#programs" className="border border-white/30 text-white text-xs font-bold px-6 py-3 hover:bg-white hover:text-black transition-colors">
+          
+            href="#programs"
+            className="border border-white/30 text-white text-xs font-bold px-6 py-3 hover:bg-white hover:text-black transition-colors"
+          >
             Смотреть программы
           </a>
         </div>
@@ -63,32 +69,5 @@ export default function Hero() {
         </div>
       </div>
     </section>
-  )
-}      <a href="#programs" className="border border-white/30 text-white text-sm font-bold px-8 py-4 hover:bg-white hover:text-black transition-colors">
-        Смотреть программы
-      </a>
-    </div>
-
-    {/* Stats */}
-    <div className="grid grid-cols-2 md:grid-cols-4 gap-8 pt-8 border-t border-white/10">
-      <div>
-        <p className="text-3xl md:text-4xl font-bold text-white">20+</p>
-        <p className="text-xs text-white/40 uppercase tracking-widest mt-1">лет в индустрии</p>
-      </div>
-      <div>
-        <p className="text-3xl md:text-4xl font-bold text-white">5 000+</p>
-        <p className="text-xs text-white/40 uppercase tracking-widest mt-1">реализованных проектов</p>
-      </div>
-      <div>
-        <p className="text-3xl md:text-4xl font-bold text-white">3</p>
-        <p className="text-xs text-white/40 uppercase tracking-widest mt-1">потока Multimedia Foundation</p>
-      </div>
-      <div>
-        <p className="text-3xl md:text-4xl font-bold text-white">83%</p>
-        <p className="text-xs text-white/40 uppercase tracking-widest mt-1">выбирают офлайн-практику</p>
-      </div>
-    </div>
-  </div>
-</section>
   )
 }
