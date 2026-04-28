@@ -9,26 +9,26 @@ const audiences = [
 export default function Audience() {
   return (
     <section className="w-full px-8 md:px-16 py-24 bg-white border-t border-gray-200">
-      <div className="grid grid-cols-1 md:grid-cols-[280px_1fr] gap-16">
-        <div>
-          <h2 className="text-4xl md:text-5xl font-bold text-black leading-[1.1]">
-            Кому<br />подходят<br />программы
+      <div className="grid grid-cols-1 md:grid-cols-[35%_65%] items-start">
+        <div className="md:sticky md:top-24 pb-12 md:pb-0 md:pr-16">
+          <h2 className="text-4xl md:text-5xl font-bold text-black leading-[1.05] tracking-tight">
+            Кому<br />подойдёт
           </h2>
-          <p className="text-sm text-gray-400 mt-3">От корпоративных команд до R&D</p>
+          <p className="text-sm text-gray-400 mt-3">От новичков до профессионалов</p>
         </div>
 
-        <div className="flex flex-col">
+        <div>
           {audiences.map((a, i) => (
-            <div key={i} className="mb-12">
-              <div className="flex items-stretch gap-0 mb-3">
-                <span className="inline-flex items-center justify-center bg-black text-white text-base font-bold px-6 py-3 min-w-[80px]">
+            <div key={i} className="mb-16 last:mb-0">
+              <div className="flex items-stretch mb-1">
+                <span className="bg-black text-white text-sm font-bold flex items-center justify-center" style={{width: '100px', minHeight: '48px'}}>
                   {a.letter}
                 </span>
-                <span className="bg-gray-200 text-black text-xl md:text-2xl font-bold px-6 py-3 flex items-center flex-1">
+                <span className="bg-[#e8e8e8] text-black text-lg md:text-xl font-bold flex items-center px-5 flex-1">
                   {a.name}
                 </span>
               </div>
-              <p className="text-sm text-gray-500 leading-relaxed">
+              <p className="text-sm text-gray-500 leading-relaxed mt-3 pl-[100px]">
                 {a.desc}
               </p>
             </div>
