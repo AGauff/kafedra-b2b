@@ -10,11 +10,12 @@ export default function Hero() {
       </div>
 
       {/* Logo */}
-      <div className="absolute top-0 left-0 w-full z-10 px-8 md:px-16 pt-8">
-        <img
-          src="https://static.tildacdn.com/tild3761-3231-4963-b235-323335623836/Group_1480.svg"
-          className="w-full"
-        />
+<div className="absolute top-0 left-0 z-10 px-8 md:px-16 pt-8">
+  <img
+    src="https://static.tildacdn.com/tild3761-3231-4963-b235-323335623836/Group_1480.svg"
+    className="h-6 md:h-8"
+  />
+</div>
       </div>
 
       {/* Gradient overlay */}
