@@ -22,9 +22,6 @@ export default function Hero() {
 
   {/* Content - pushed to bottom */}
   <div className="relative z-10 px-8 md:px-16 pb-16 mt-auto">
-    <span className="inline-block bg-white text-black text-xs font-bold uppercase tracking-widest px-3 py-1 mb-6">
-      Корпоративное обучение
-    </span>
     <h1 className="text-4xl md:text-6xl font-bold text-white mb-4 max-w-4xl leading-tight">
       Научим вашу команду создавать мультимедиа-проекты от идеи до реализации
     </h1>
