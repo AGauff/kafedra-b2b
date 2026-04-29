@@ -8,9 +8,6 @@ const problems = [
 export default function Problem() {
   return (
     <section className="w-full px-8 md:px-16 py-24 bg-white">
-      <span className="inline-block bg-black text-white text-[10px] font-bold uppercase tracking-widest px-2 py-0.5 mb-6">
-        Проблема
-      </span>
       <h2 className="text-2xl md:text-3xl font-bold text-black leading-snug mb-16 max-w-2xl">
         Вашей команде не хватает практических навыков в мультимедиа?
       </h2>
