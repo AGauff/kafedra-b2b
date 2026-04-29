@@ -24,7 +24,7 @@ export default function Audience() {
                 <span className="bg-black text-white text-sm font-medium flex items-center justify-start pl-4" style={{width: '130px', minHeight: '48px'}}>
                   {a.letter}
                 </span>
-                <span className="bg-[#e8e8e8] text-black text-lg md:text-xl font-medium flex items-center px-5 flex-1">
+                <span className="bg-[#e8e8e8] text-black text-lg md:text-xl font-medium flex items-center px-5 py-1 flex-1">
                   {a.name}
                 </span>
               </div>
