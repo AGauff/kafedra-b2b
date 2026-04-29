@@ -13,6 +13,10 @@
   --color-blue: #0000FF;
 }
 
+h1, h2, h3, h4 {
+  font-weight: 500 !important;
+}
+
 html {
   -webkit-font-smoothing: antialiased;
   font-size: 20px;
