@@ -21,14 +21,14 @@ export default function Audience() {
           {audiences.map((a, i) => (
             <div key={i} className="mb-16 last:mb-0">
               <div className="flex items-stretch mb-1 gap-1">
-                <span className="bg-black text-white text-sm font-medium flex items-center justify-center" style={{width: '130px', minHeight: '48px'}}>
+                <span className="bg-black text-white text-sm font-medium flex items-center justify-start pl-4" style={{width: '130px', minHeight: '48px'}}>
                   {a.letter}
                 </span>
                 <span className="bg-[#e8e8e8] text-black text-lg md:text-xl font-medium flex items-center px-5 flex-1">
                   {a.name}
                 </span>
               </div>
-              <p className="text-sm text-gray-500 leading-relaxed mt-3 pl-[100px]">
+              <p className="text-sm text-gray-500 leading-relaxed mt-3 pl-[138px]">
                 {a.desc}
               </p>
             </div>
